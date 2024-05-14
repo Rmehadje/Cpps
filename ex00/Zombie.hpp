@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmehadje <rmehadje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 13:50:26 by rmehadje          #+#    #+#             */
-/*   Updated: 2024/05/14 10:57:11 by rmehadje         ###   ########.fr       */
+/*   Created: 2024/05/07 14:36:29 by rmehadje          #+#    #+#             */
+/*   Updated: 2024/05/14 13:30:15 by rmehadje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-int main(){
-	int i = 0;
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
+#include <iostream>
+#include <string>
 
-	while (i < 6)
-	{
-		
-	}
-}
+class Zombie
+{
+	private:
+		std::string name;
+	public:
+		Zombie (void);
+		Zombie (std::string name);
+		~Zombie();
+		void	announce(void);
+};
+
+Zombie* newZombie(std::string name);
+void	randomChump(std::string name);
+
+
+#endif
