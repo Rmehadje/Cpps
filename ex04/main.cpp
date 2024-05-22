@@ -6,7 +6,7 @@
 /*   By: rmehadje <rmehadje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:48:30 by rmehadje          #+#    #+#             */
-/*   Updated: 2024/05/21 16:38:02 by rmehadje         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:59:21 by rmehadje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,11 @@ int main(int argc, char **argv)
 		std::cerr << "error: cannot take empty characters as arguemnts" << std::endl;
 		return 1;
 	}
-	if (s1.length() > 1)
-	{
-		std::cerr << "please make sure you only write one character as argument" << std::endl;
-		return 1;
-	}
 	else
 	{
 		std::string	s2 = std::string(argv[3]);
 		if (s1 == s2){
 			std::cerr << "nothing to be changed here" << std::endl;
-			return 1;
-		}
-		if (s2.length() > 1)
-		{
-			std::cerr << "please make sure you only write one character as argument" << std::endl;
 			return 1;
 		}
 		std::ifstream	infile(argv[1]);
