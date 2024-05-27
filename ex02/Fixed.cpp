@@ -6,7 +6,7 @@
 /*   By: rmehadje <rmehadje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:29:09 by rmehadje          #+#    #+#             */
-/*   Updated: 2024/05/27 15:47:05 by rmehadje         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:44:59 by rmehadje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 Fpn::Fpn(){
 	std::cout << "default constructor called..." <<std::endl;
 	this->Fpnv = 0;
-}
-
-Fpn::Fpn(const	int	toInt){
-	std::cout << "int constructor called..." <<std::endl;
-	this->setRawBits(toInt << this->frac_bits);
-}
-
-Fpn::Fpn(const	float	toFloat){
-	std::cout << "float constructor called..." <<std::endl;
-	this->setRawBits((int)roundf(toFloat * (float)(1 << this->frac_bits)));
 }
 
 Fpn::Fpn(const	Fpn	&other) {
@@ -62,7 +52,66 @@ int Fpn::toInt(void) const{
 	return this->Fpnv >> Fpn::frac_bits;
 }
 
-std::ostream &operator<<(std::ostream &out, const Fpn &value){
-	out << value.toFloat();
-	return (out);
+
+bool	Fpn::operator>(const	Fpn &other) const{
+	return this->getRawBits() > other.getRawBits();
 }
+
+bool	Fpn::operator<(const Fpn &other) const{
+	return this->getRawBits() < other.getRawBits();
+}
+
+bool	Fpn::operator>=(const Fpn &other) const{
+	return this->getRawBits() >= other.getRawBits();
+}
+
+bool	Fpn::operator<=(const Fpn &other) const{
+	return this->getRawBits() <= other.getRawBits();
+}
+
+bool	Fpn::operator==(const Fpn &other) const{
+	return this->getRawBits() == other.getRawBits();
+}
+
+bool	Fpn::operator!=(const Fpn &other) const{
+	return this->getRawBits() != other.getRawBits();
+}
+
+float	Fpn::operator+(const	Fpn &other) const{
+	return (this->toFloat() + other.toFloat());
+}
+
+float	Fpn::operator-(const	Fpn &other) const{
+	return (this->toFloat() - other.toFloat());
+}
+
+float	Fpn::operator/(const	Fpn &other) const{
+	return (this->toFloat() / other.toFloat());
+}
+
+float	Fpn::operator*(const	Fpn &other) const{
+	return (this->toFloat() * other.toFloat());
+}
+
+Fpn	&Fpn::operator++( void ){
+	this->Fpnv += 1;
+	return *this;
+}
+
+Fpn	Fpn::operator++( int ){
+	Fpn	tmp(*this);
+	++(*this);
+	return *this;
+}
+
+Fpn	&Fpn::operator--(void){
+	this->Fpnv -= 1;
+	return *this;
+}
+
+Fpn	Fpn::operator--( int ){
+	Fpn	tmp(*this);
+	--(*this);
+	return *this;
+}
+

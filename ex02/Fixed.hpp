@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmehadje <rmehadje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:20 by rmehadje          #+#    #+#             */
-/*   Updated: 2024/05/27 15:47:10 by rmehadje         ###   ########.fr       */
+/*   Updated: 2024/05/27 15:50:19 by rmehadje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,26 @@ class Fpn
 		float	toFloat(void) const;
 		int	toInt(void) const;
 
+		bool	operator>(const Fpn &other) const;
+		bool	operator<(const Fpn &other) const;
+		bool	operator>=(const Fpn &other) const;
+		bool	operator<=(const Fpn &other) const;
+		bool	operator==(const Fpn &other) const;
+		bool	operator!=(const Fpn &other) const;
+
+
+		float	operator+(const	Fpn	&other) const;	
+		float	operator-(const	Fpn	&other) const;	
+		float	operator/(const	Fpn	&other) const;	
+		float	operator*(const	Fpn	&other) const;	
+
+		Fpn	&operator++( void );
+		Fpn	operator++( int );
+		Fpn	&operator--( void );
+		Fpn	operator--( int );
 };
 
 std::ostream &operator<<(std::ostream &out, const Fpn &value);
-
 
 
 #endif
