@@ -1,4 +1,4 @@
-NAME = ex00
+NAME = ex01
 
 SRC = fixed.cpp main.cpp
 
