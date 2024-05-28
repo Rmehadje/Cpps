@@ -6,7 +6,7 @@
 /*   By: rmehadje <rmehadje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:20 by rmehadje          #+#    #+#             */
-/*   Updated: 2024/05/27 15:50:19 by rmehadje         ###   ########.fr       */
+/*   Updated: 2024/05/28 11:58:20 by rmehadje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ class Fpn
 		Fpn	operator++( int );
 		Fpn	&operator--( void );
 		Fpn	operator--( int );
+
+		static	Fpn	&min(Fpn &a, Fpn &b);
+		static	const Fpn	&min(Fpn const &a, Fpn const &b);
+		static	Fpn	&max(Fpn &a, Fpn &b);
+		static	const Fpn	&max(Fpn const &a, Fpn const &b);
 };
 
 std::ostream &operator<<(std::ostream &out, const Fpn &value);
