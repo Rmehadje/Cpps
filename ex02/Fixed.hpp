@@ -6,7 +6,7 @@
 /*   By: rmehadje <rmehadje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:26:20 by rmehadje          #+#    #+#             */
-/*   Updated: 2024/05/28 11:58:20 by rmehadje         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:19:09 by rmehadje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Fpn
 		static const int	frac_bits = 8;
 	public:
 		Fpn();
+		Fpn(const	Fpn	&other);
+		~Fpn();
+		Fpn	&operator=(const	Fpn &og);
 		Fpn(const	int	inInt);
 		Fpn(const	float	inFloat);
-		Fpn(const	Fpn	&other);
-		Fpn	&operator=(const	Fpn &og);
-		~Fpn();
 		int	getRawBits(void) const;
 		void	setRawBits(int	const	raw);
 
