@@ -1,6 +1,10 @@
 NAME = ex02
 
+<<<<<<< HEAD
 SRC = main.cpp
+=======
+SRC = Fixed.cpp main.cpp
+>>>>>>> Cpp02/master
 
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
